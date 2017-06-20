@@ -50,7 +50,7 @@ RUN \
     && curl -fSL https://github.com/pintsized/lua-resty-http/archive/v0.10.tar.gz -o http.tar.gz \
     && tar zxf http.tar.gz \
     && cd lua-resty-http-0.10/lib/ \
-    && cp * /usr/local/openresty/lualib/ \
+    && cp * /usr/local/openresty/lualib/ -rvf \
    # && cd /tmp/lua-resty-http-0.10/ \
    # && make install \
 
