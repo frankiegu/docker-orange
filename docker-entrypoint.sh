@@ -28,7 +28,7 @@ sed -i "s/listen       80;/listen       8888;/g" ${NGINX_CONF}
 /usr/local/bin/orange start
 
 # my project start 
-#sh /usr/local/orange/pro/start.sh
+sh /usr/local/orange/pro/start.sh
 
 # log to docker
 tail -f /usr/local/orange/logs/access.log
