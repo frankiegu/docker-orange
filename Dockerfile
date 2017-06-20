@@ -51,6 +51,7 @@ RUN \
     && tar zxf http.tar.gz \
     && cd lua-resty-http-0.10/lib/ \
     && cp * /usr/local/openresty/lualib/ \
+    && cd lua-resty-http-0.10/ \
     && make install \
 
     && cd / \
