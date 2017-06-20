@@ -1,3 +1,11 @@
+## 在官方基础上修改
+
+> 镜像增加了 `lua-resty-http`库
+> 修正dns 地址为223.5.5.5  国内阿里dns服务器
+> 容器暴露 增加 8585端口 自定义项目用
+> 开容器自动启动自己的项目
+
+
 # Orange in Docker
 
 [![](https://images.microbadger.com/badges/image/syhily/orange.svg)](https://microbadger.com/images/syhily/orange "Get your own image badge on microbadger.com") ![](https://img.shields.io/docker/pulls/syhily/orange.svg) ![](https://img.shields.io/docker/stars/syhily/orange.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg)
