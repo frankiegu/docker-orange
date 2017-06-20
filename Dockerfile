@@ -45,6 +45,12 @@ RUN \
     && tar zxf orange.tar.gz \
     && cd orange-${ORANGE_VERSION} \
     && make install \
+    
+    && cd /tmp \
+    && curl -fSL https://github.com/pintsized/lua-resty-http/archive/v0.10.tar.gz -o http.tar.gz \
+    && tar zxf http.tar.gz \
+    && cd lua-resty-http-0.10 \
+    && make install
 
     && cd / \
     && rm -rf /tmp/* \
@@ -56,8 +62,8 @@ RUN \
     && echo 'conf-dir=/etc/dnsmasq.d' >> /etc/dnsmasq.conf \
     # This upstream dns server will cause some issues
     && echo 'INTERNAL_DNS' >> /etc/resolv.dnsmasq.conf \
-    && echo 'nameserver 8.8.8.8' >> /etc/resolv.dnsmasq.conf \
-    && echo 'nameserver 8.8.4.4' >> /etc/resolv.dnsmasq.conf \
+    && echo 'nameserver 233.5.5.5' >> /etc/resolv.dnsmasq.conf \
+    && echo 'nameserver 233.6.6.6' >> /etc/resolv.dnsmasq.conf \
 
     && useradd www \
     && echo "www:www" | chpasswd \
@@ -65,7 +71,7 @@ RUN \
     && mkdir -p ${ORANGE_PATH}/logs \
     && chown -R www:www ${ORANGE_PATH}/*
 
-EXPOSE 7777 8888 9999
+EXPOSE 7777 8888 9999 8585
 
 # Daemon
 ENTRYPOINT ["docker-entrypoint.sh"]
