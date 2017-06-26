@@ -26,14 +26,17 @@ sed -i "s/lua_package_path '..\/?.lua;\/usr\/local\/lor\/?.lua;;';/lua_package_p
 sed -i "s/listen       80;/listen       8888;/g" ${NGINX_CONF}
 
 
-chown www:www /usr/local/orange -R
-su www
+#chown www:www /usr/local/orange -R
+#su www
 
 /usr/local/bin/orange start
 
-# my project start 
-cd /usr/local/orange/pro/
-sh start.sh
+
 
 # log to docker
 tail -f /usr/local/orange/logs/access.log
+
+# my project start 
+sleep 30s
+cd /usr/local/orange/pro/
+sh start.sh
