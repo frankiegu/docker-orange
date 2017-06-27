@@ -2,6 +2,10 @@
 ORANGE_CONF="/usr/local/orange/conf/orange.conf"
 NGINX_CONF="/usr/local/orange/conf/nginx.conf"
 
+# my project start 
+cd /usr/local/orange/pro/
+sh start.sh
+
 # DNS resolve for nginx and add the internal DNS
 INTERNAL_DNS=$(cat /etc/resolv.conf | grep nameserver)
 sed -i "s/INTERNAL_DNS/${INTERNAL_DNS}/g" /etc/resolv.dnsmasq.conf
@@ -36,7 +40,4 @@ sed -i "s/listen       80;/listen       8888;/g" ${NGINX_CONF}
 # log to docker
 tail -f /usr/local/orange/logs/access.log
 
-# my project start 
-sleep 30s
-cd /usr/local/orange/pro/
-sh start.sh
+
