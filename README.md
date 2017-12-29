@@ -8,6 +8,9 @@
 
 > - 开容器自动启动自己的项目
 
+### add tool
+
+> 添加一个数据库管理工具 ` mysql-utilities `
 
 # Orange in Docker
 
