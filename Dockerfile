@@ -28,6 +28,7 @@ RUN \
         dnsmasq \
         openresty \
         openresty-resty \
+        mysql-utilities \
         make \
 
     && yum clean all \
