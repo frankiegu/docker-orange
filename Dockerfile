@@ -29,6 +29,7 @@ RUN \
         openresty \
         openresty-resty \
         mysql-utilities \
+		mysql-client \
         make \
 
     && yum clean all \
